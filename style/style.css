@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  background-color: rgb(255, 255, 255);
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 2%;
+}
+nav .logo {
+  width: 100px;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.show {
+  display: flex !important;
+}
+
+nav ul li > a {
+  display: block;
+  padding: 0px 10px 0px 10px;
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li .link::before {
+  content: "♡ Loveless";
+  font-size: 10px;
+  text-align: center;
+  color: rgb(245, 245, 245);
+  display: block;
+  position: absolute;
+ font-weight: bolder;
+ font-weight: bolder;
+  background-color: rgba(162, 41, 41, 0.896);
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav ul li .link:hover::before {
+  transform: scaleX(1);
+}
+
+/* menu cuando cambia la resolucion */
+
+nav .mas {
+  display: none;
+}
+nav .menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  min-width: 10px;
+  margin-top: 62px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+nav .menu a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+nav .menu a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+/* menu mobil */
+
+nav .mobile {
+  display: none;
+  width: 100%;
+}
+
+nav .mobile .header {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+nav .mobile .header a {
+  color: white;
+  display: inline-flex;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav .mobile .header #bmenu {
+  border: 3px solid black;
+  cursor: pointer;
+background-color: crimson;
+  color: white;
+
+}
+
+nav .mobile .links {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  z-index: 200;
+
+  background-color: black;
+}
+nav .mobile .links a {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  color: rgb(91, 51, 51);
+}
+
+nav .mobile .links a:hover {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  color: black;
+  background-color: white;
+
+}
+
+/* header */
+header {
+  background-image: url(../Images/fondo-header.png);
+  background-size:cover;
+  background-position: center center;
+  height: 120vh;
+}
+
+.banner{
+  background-color: rgba(247, 27, 27, 0.4);
+  box-shadow:10px 15px rgb(101, 97, 97);
+  border-radius: 10px;
+  width:40%;
+  height: 300px;
+  align-self: center;
+  
+
+}
+.banner h1{
+  color: white;
+}
+.subheader{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: center;
+  width: 85%;
+  margin: 50px auto;
+  background-color: rgb(232, 155, 155,0.6);
+  box-shadow: 0px 0px 20px 10px rgba(232, 155, 155,0.8);
+  text-align: center;
+  padding: 20px ;
+color: #ff5a5a;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* main */
+
+main{
+  display: grid;
+  margin: 10px auto;
+  width: 90%;
+  gap: 10px;
+  grid-row: 1fr 2fr;
+  grid-template-areas: "aside section section section"
+                        "aside section section section";
+}
+aside{
+  grid-area: aside;
+  background-color: aquamarine;
+}
+
+
+/* section */
+
+section{
+  grid-area: section;
+  background-color: rgb(77, 76, 76);
+  border: rgba(255, 255, 255, 0.4) 10px double;
+  position: relative;
+  color: white;
+  padding: 10px;
+  text-align: justify;
+}
+section .icono{
+  position: absolute;
+  top: -50px;
+  left: -40px;
+  font-size: 70px;
+  transform: rotate(-30deg);
+}
+
+
+/* cambios de resolucion*/
+
+@media screen and (max-width: 875px) {
+  nav .link-oculto {
+    display: none;
+  }
+  nav .mas {
+    display: flex;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 676px) {
+  nav {
+    width: 100%;
+    padding: 0;
+  }
+  nav ul {
+    display: none;
+  }
+  header {
+    background-image: url(../Images/fondo-header.png);
+    background-size:cover;
+    background-position: center center;
+    height: 80vh;
+  }
+  header .texto{
+    font-size: 15px;
+  }
+  nav .mobile {
+    display: block;
+  }
+.subheader{
+  flex-direction: column;
+}
+.subheader .banner{
+  width: 100%;
+}
+  }
